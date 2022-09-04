@@ -1,13 +1,273 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base{
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+  *{
+    font-family: 'Roboto', sans-serif;
+    font-style:normal;
+  }
+  .smallForm input{
+    @apply !rounded-[.7rem] !px-[2rem] !py-5
+  }
+  .smallForm label{
+    @apply !left-[2rem]
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components{
+  /* global css */
+  
+  .flex-row-center-between{
+    @apply flex items-center justify-between flex-row
+  }
+  .flex-row-center-around{
+    @apply flex items-center justify-around flex-row
+  }
+  .flex-row-around{
+    @apply flex justify-around flex-row
+  }
+  .flex-row-center{
+    @apply flex items-center justify-center flex-row
+  }
+  .flex-coloum-center{
+    @apply flex items-center justify-center flex-col
+  }
+  .flex-coloum-start-center{
+    @apply flex items-start justify-center flex-col
+  }
+
+   /* input feild design css  */
+    label.input-feild-label{
+    @apply absolute top-[0.9rem] left-[3rem] px-2 font-bold transition-all ease-in-out	text-normal-light-blue-100 text-xl
+    }
+    input:not([type='submit']).input-feild {
+      @apply  pl-14 pr-5 py-4 border-2 rounded-[20px] border-normal-light-blue-100 outline-0 text-normal-light-blue-100
+    }
+  
+  
+  
+    /* all buttons css  */
+  .btn{
+    @apply  border-2
+  }
+  .btn-transparent-light-blue{
+    @apply py-2 px-4 rounded-3xl border-primary-gray-100 hover:text-primary-white-100 hover:bg-normal-light-blue-100 hover:border-primary-white-100 transition-all
+  }
+  .btn-primary-blue-transparent{
+    @apply py-4 px-20 rounded-2xl font-bold bg-primary-blue text-white text-[1.5rem] hover:bg-transparent hover:border-primary-blue hover:text-primary-blue transition-all
+  }
+  .btn-primary-transparent-blue{
+    @apply py-4 px-20 rounded-2xl font-bold hover:bg-primary-blue hover:text-white text-[1.5rem] bg-transparent border-primary-blue text-primary-blue transition-all
+  }
+  /* findnow button css  */
+  .btn-findNowbtn-wrapper div{
+    @apply inline-block relative text-normal-light-blue-100
+  }
+  .btn-findNowbtn-wrapper label{
+      @apply absolute top-[1rem] left-[3rem]  bg-white px-2 font-bold transition-all ease-in-out	text-normal-light-blue-100 text-xl
+  }
+  .input-feild + svg{
+    @apply absolute left-[1rem] top-[1.2rem] text-normal-light-blue-100
+
+  }
+  .btn-findNowbtn-wrapper svg{
+    @apply absolute left-[1rem] top-[1.2rem]
+  }
+  .btn-findNowbtn-wrapper input[type='text']{
+    @apply  pl-14 pr-5 py-4 min-w-[450px] border border-normal-light-blue-100 rounded-l-md outline-0 text-normal-light-blue-100
+  }
+  .btn-findNowbtn-wrapper input[type='submit']{
+    @apply  px-20 py-4 bg-primary-blue text-white rounded-r-md	text-[1.1rem] font-bold hover:bg-transparent hover:border transition border hover:text-primary-blue hover:border-primary-blue
+  }
+
+  
+  /* text css here  */
+  .main-heading-primary-blue{
+    @apply text-[4rem] tracking-tight font-black leading-20 text-primary-blue		
+  }
+  .main-heading-dark-blue{
+    @apply text-[4rem] tracking-tight font-black leading-20 text-normal-dark-blue		
+  }
+
+  .main-heading-black{
+    @apply text-[4rem] tracking-tight font-black leading-20 text-black		
+  }
+  .main-heading-white{
+    @apply text-[4rem] tracking-tight font-black leading-20 text-white		
+  }
+  .main-heading-primary-gray{
+    @apply text-[3.2rem] font-black leading-20 text-primary-gray-100
+  }
+  .main-paragraph-gray{
+    @apply text-[1.7rem] font-bold leading-8 text-primary-gray-600 
+  }
+
+  .main-paragraph-primary-blue{
+    @apply text-xl text-primary-blue font-[500]
+  }
+  /* nav bar logo css */
+  .main-nav-logo{
+      @apply w-full;
+  }
+  /* nav bar menu css */
+
+  .main-nav-menu > li{
+    @apply lg:ml-5 uppercase 
+  }
+
+  .main-nav-menu li:not(:last-child) a,
+  .main-nav-menu li:not(:last-child) span,
+  .clientreviewsCatagoryList ul li a
+  {
+    @apply hover:text-blue-600 transition-colors
+  }
+  
+  /* nav bar dropdown menu css */
+
+  .main-nav-dropdown-menu{
+    @apply  hidden absolute z-10 bg-white top-6 left-0 shadow-lg min-w-[200px] group-hover:flex transition-all rounded-xl
+  }
+  .main-nav-dropdown-menu:not(.nav-language-menu){
+      @apply translate-x-[-40%]
+  }
+  .main-nav-dropdown-menu > li{
+    @apply hover:bg-lightest-blue w-full
+  }
+  .main-nav-dropdown-menu:not(.nav-language-menu) > li{
+    @apply   min-w-[150px] flex items-center h-[100px] w-max justify-center
+  }
+  .main-nav-dropdown-menu a{
+    @apply inline-block py-5 px-5 w-full inline-block text-center
+  }
+  /* dashboard findbutton heading  */
+  .dashboard-findbtn-heading{
+    @apply text-center text-[2.5rem] px-20 mb-20 text-gray-600 font-extrabold
+  }
+  .dashboard-findbtn-heading span{
+    @apply text-normal-dark-blue
+  }
+  /* main-footer css */ 
+  .main-footer-wrapper{
+    @apply px-[3rem] pt-20 pb-5 bg-normal-dark-blue
+  }
+  .main-footer-list li:not(:first-child){
+    @apply text-lg text-light-white-500 m-3 hover:text-white
+  }
+  .main-footer-list li:first-child{
+    @apply text-2xl text-white font-bold m-3 
+  }
+  .main-footer-headline{
+    @apply text-[2.2rem] font-bold text-white my-5
+  }
+  .main-footer-text{
+    @apply text-[1.2rem] leading-[1.5rem] pr-10 font-medium text-light-white-500
+  }
+  .footer-social-links{
+    @apply flex-row-center 
+  }
+  .footer-social-links svg{
+    @apply text-[2rem] ml-[2rem] text-light-white-600 m-2 rounded-xl hover:text-white text-justify	
+  }
+  .footer-copywright-section ul{
+      @apply list-disc	flex-row-center
+  }
+  .footer-copywright-section ul li{
+    @apply text-light-white-500 m-5 hover:text-white
+  }
+
+
+
+ /* contact page design css  */
+  
+ .contact-form{
+  @apply p-20  bg-normal-light-blue-300 w-9/12 rounded-3xl
+ }
+ .contact-form input:not([type='submit']){
+    @apply py-5 w-1/2
+ }
+
+ .contact-form textarea{
+  @apply h-[200px] mt-5 bg-transparent border-2 rounded-3xl border-normal-light-blue-100 outline-none text-normal-light-blue-100 p-4 w-full
+ }
+
+ /* blog page carousel design css */ 
+ .carousel .control-dots .dot{
+    @apply !bg-primary-blue !w-[12px] !h-[12px]
+  
+ }
+ .slick-arrow {
+  @apply !bg-primary-blue
+ }
+
+ .slick-slide > div{
+  @apply h-full px-10
+ }
+
+ .blogs-container{
+  @apply grid xs:p-5 grid-cols-3 gap-y-10 gap-x-14 sm:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 xl:grid-cols-2 xs:grid-cols-1
+ }
+ .rc-pagination-item {
+  @apply !h-[50px] w-[50px] !rounded-full !border-none
+ }
+ .rc-pagination-item-active{
+  @apply !bg-normal-dark-blue hover:!bg-transparent hover:!text-normal-dark-blue !text-white hover:!border-normal-dark-blue
+ }
+
+ .rc-pagination-item-active a{
+  @apply !text-white hover:!text-normal-dark-blue 
+ }
+ .rc-pagination-item a{
+    @apply !text-[1.3rem] !py-[10px] hover:text-normal-dark-blue
+ }
+ .rc-pagination-prev{
+  @apply !mr-4
+ }
+ .rc-pagination-next,.rc-pagination-prev{
+  @apply !h-[50px] pt-[12px] w-[80px] mx-5 text-[1.2rem] bg-normal-dark-blue !text-white !rounded-full 
+ }
+ .rc-pagination-next button,.rc-pagination-prev button{
+  @apply !text-white
+ }
+ .rc-pagination-disabled{
+  @apply !hidden
+ }
+
+ /* succsess stories page css  */
+ .SuccsesStories .carousel.carousel-slider,
+ .reviews .carousel.carousel-slider{
+    @apply h-[700px]
+ }
+
+ /* client reviews Catagory css */
+ 
+ .primaryTabContainer .primaryTabList a{
+  @apply text-xl font-semibold text-primary-gray-100 capitalize
 }
+.primaryTabContainer .primaryTabList li{
+  @apply my-2
+}
+
+/* how to work with mail sale css  */
+.howtoworkwithmailsale .carousel .slide{
+  @apply text-start
+}
+
+ /*quesiton seciton */
+ .questions svg{
+    @apply text-[2.5rem] rounded-full text-white p-2 !h-[50px] !w-[50px]
+ } 
+
+/* pricingPage css here */ 
+
+#pricingPage #primaryTabLeft{
+  @apply !w-2/12
+}
+#pricingPage #primaryTabRight{
+  @apply !w-10/12
+}
+}
+
