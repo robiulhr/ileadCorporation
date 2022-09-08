@@ -16,6 +16,33 @@
   .smallForm label{
     @apply !left-[2rem]
   }
+  input[type="checkbox"]{
+    @apply h-[20px] w-[20px] rounded-lg p-4
+  }
+
+  input[type="checkbox"]{
+    clip-path: circle(61% at 50% 49%);
+
+  }
+  select{
+    background-position-x :95% !important;
+  }
+  select{
+    @apply bg-down-arrow appearance-none h-[32px] bg-no-repeat bg-right focus:outline-none shadow min-w-[150px] bg-white border rounded-md
+  }
+  option{
+    @apply hover:bg-slate-400 appearance-none
+  }
+  select[data-open]{
+    @apply !bg-red-200
+  }
+  select[data-open] datalist{
+      @apply !bg-black
+  }
+  div.option[data-checked]{
+      @apply !bg-black
+  }
+
 }
 
 @layer components{
@@ -33,12 +60,16 @@
   .flex-row-center{
     @apply flex items-center justify-center flex-row
   }
+  .flex-row-start-between{
+    @apply flex items-start justify-between flex-row
+ }
   .flex-coloum-center{
     @apply flex items-center justify-center flex-col
   }
   .flex-coloum-start-center{
     @apply flex items-start justify-center flex-col
   }
+ 
 
    /* input feild design css  */
     label.input-feild-label{
@@ -58,7 +89,7 @@
     @apply py-2 px-4 rounded-3xl border-primary-gray-100 hover:text-primary-white-100 hover:bg-normal-light-blue-100 hover:border-primary-white-100 transition-all
   }
   .btn-primary-blue-transparent{
-    @apply py-4 px-20 rounded-2xl font-bold bg-primary-blue text-white text-[1.5rem] hover:bg-transparent hover:border-primary-blue hover:text-primary-blue transition-all
+    @apply py-4 px-20 rounded-2xl font-bold bg-primary-blue border-2 border-primary-blue text-white text-[1.5rem] hover:bg-transparent hover:border-primary-blue hover:text-primary-blue transition-all
   }
   .btn-primary-transparent-blue{
     @apply py-4 px-20 rounded-2xl font-bold hover:bg-primary-blue hover:text-white text-[1.5rem] bg-transparent border-primary-blue text-primary-blue transition-all
@@ -269,5 +300,46 @@
 #pricingPage #primaryTabRight{
   @apply !w-10/12
 }
+
+/*  triangle css here  */
+.triangle{
+    @apply  mt-[-15px] w-0 h-0 border-l-[35px] border-solid border-transparent border-r-[35px] border-b-[30px] border-b-info rounded-t-3xl
+}
+.pricingStandartDescription-0 .triangle{
+  @apply ml-[100px]
+}
+.pricingStandartDescription-1 .triangle{
+  @apply ml-[450px]
+}
+
+.pricingStandartDescription-2 .triangle{
+  @apply ml-[800px]
+}
+
+.pricingStandartDescription-3 .triangle{
+  @apply ml-[1150px]
+}
+
+.cart{
+  @apply bg-normal-dark-blue rounded-full h-[40px] w-[40px] text-center p-1 py-2
+}
+.cart svg{
+  @apply text-white text-[1.6rem]
+}
+
+.signupAndloginForm > div{
+  @apply my-8
+}
+.signupAndloginForm input:not([type="checkbox"]){
+  @apply !rounded-lg
+}
+.priveryAndTermsLink {
+  @apply text-primary-blue hover:text-normal-dark-blue mx-3 text-[1.1rem]
+}
+.signupAndLogin-small-paragraph{
+  @apply text-normal-light-blue-100 text-lg text-center
+}
+
+
 }
 
