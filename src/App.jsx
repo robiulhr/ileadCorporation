@@ -20,9 +20,14 @@ import Login from "./pages/login";
 import Search from "./pages/search";
 import UserDashboardNav from "./components/globalComponent/NavAndFooter/userDashboardNav";
 import MyAccount from "./pages/accountPages/myAccount";
+import AdminLogin from "./pages/adminDashboardPages/adminLogin";
+import ErrorPage from "./pages/errorPage";
+import AdminDashboard from "./pages/adminDashboardPages/adminDashboard";
+import AdminDashboardContextwrapper from "./pages/adminDashboardPages/adminDashboardContextwrapper";
 function App() {
   const [mainNabShow, setMainNavShow] = useState(true);
   const [userDashboardNavShow, setuserDashboardNavShow] = useState(true);
+  const [mainFooterShow, setmainFooterShow] = useState(true);
   return (
     <Router>
       {mainNabShow && <MainnavBar />}
@@ -36,6 +41,7 @@ function App() {
             <Dashborad
               funcNav={setMainNavShow}
               funcUsrDashboardNav={setuserDashboardNavShow}
+              funcmainFooter={setmainFooterShow}
             />
           }
         />
@@ -46,15 +52,20 @@ function App() {
             <Blog
               funcNav={setMainNavShow}
               funcUsrDashboardNav={setuserDashboardNavShow}
+              funcmainFooter={setmainFooterShow}
             />
           }
         />
         <Route
           exact
           path="/contact"
-          element={<Contact />}
-          funcNav={setMainNavShow}
-          funcUsrDashboardNav={setuserDashboardNavShow}
+          element={
+            <Contact
+              funcNav={setMainNavShow}
+              funcUsrDashboardNav={setuserDashboardNavShow}
+              funcmainFooter={setmainFooterShow}
+            />
+          }
         />
         <Route
           exact
@@ -63,6 +74,7 @@ function App() {
             <CustomerCare
               funcNav={setMainNavShow}
               funcUsrDashboardNav={setuserDashboardNavShow}
+              funcmainFooter={setmainFooterShow}
             />
           }
         />
@@ -73,6 +85,7 @@ function App() {
             <SuccsesStories
               funcNav={setMainNavShow}
               funcUsrDashboardNav={setuserDashboardNavShow}
+              funcmainFooter={setmainFooterShow}
             />
           }
         />
@@ -83,6 +96,7 @@ function App() {
             <Reviews
               funcNav={setMainNavShow}
               funcUsrDashboardNav={setuserDashboardNavShow}
+              funcmainFooter={setmainFooterShow}
             />
           }
         />
@@ -93,6 +107,7 @@ function App() {
             <HowToWorkWithMailsale
               funcNav={setMainNavShow}
               funcUsrDashboardNav={setuserDashboardNavShow}
+              funcmainFooter={setmainFooterShow}
             />
           }
         />
@@ -103,6 +118,7 @@ function App() {
             <Pricing
               funcNav={setMainNavShow}
               funcUsrDashboardNav={setuserDashboardNavShow}
+              funcmainFooter={setmainFooterShow}
             />
           }
         />
@@ -113,6 +129,7 @@ function App() {
             <SalesCrm
               funcNav={setMainNavShow}
               funcUsrDashboardNav={setuserDashboardNavShow}
+              funcmainFooter={setmainFooterShow}
             />
           }
         />
@@ -123,6 +140,7 @@ function App() {
             <EmailApi
               funcNav={setMainNavShow}
               funcUsrDashboardNav={setuserDashboardNavShow}
+              funcmainFooter={setmainFooterShow}
             />
           }
         />
@@ -133,6 +151,7 @@ function App() {
             <EmailMarketing
               funcNav={setMainNavShow}
               funcUsrDashboardNav={setuserDashboardNavShow}
+              funcmainFooter={setmainFooterShow}
             />
           }
         />
@@ -143,6 +162,7 @@ function App() {
             <EmailFinder
               funcNav={setMainNavShow}
               funcUsrDashboardNav={setuserDashboardNavShow}
+              funcmainFooter={setmainFooterShow}
             />
           }
         />
@@ -153,6 +173,7 @@ function App() {
             <ProfileDashboard
               funcNav={setMainNavShow}
               funcUsrDashboardNav={setuserDashboardNavShow}
+              funcmainFooter={setmainFooterShow}
             />
           }
         />
@@ -163,6 +184,7 @@ function App() {
             <Signup
               funcNav={setMainNavShow}
               funcUsrDashboardNav={setuserDashboardNavShow}
+              funcmainFooter={setmainFooterShow}
             />
           }
         />
@@ -173,6 +195,7 @@ function App() {
             <Login
               funcNav={setMainNavShow}
               funcUsrDashboardNav={setuserDashboardNavShow}
+              funcmainFooter={setmainFooterShow}
             />
           }
         />
@@ -183,6 +206,7 @@ function App() {
             <Search
               funcNav={setMainNavShow}
               funcUsrDashboardNav={setuserDashboardNavShow}
+              funcmainFooter={setmainFooterShow}
             />
           }
         />
@@ -193,12 +217,52 @@ function App() {
             <MyAccount
               funcNav={setMainNavShow}
               funcUsrDashboardNav={setuserDashboardNavShow}
+              funcmainFooter={setmainFooterShow}
+            />
+          }
+        />
+        {/* admin dashboard routes  */}
+
+        <Route>
+          <Route
+            exact
+            path="/admin/login"
+            element={
+              <AdminLogin
+                funcNav={setMainNavShow}
+                funcUsrDashboardNav={setuserDashboardNavShow}
+                funcmainFooter={setmainFooterShow}
+              />
+            }
+          />
+          <Route
+            exact
+            path="/admin/dashboard"
+            element={
+              <AdminDashboardContextwrapper>
+                <AdminDashboard
+                  funcNav={setMainNavShow}
+                  funcUsrDashboardNav={setuserDashboardNavShow}
+                  funcmainFooter={setmainFooterShow}
+                />
+              </AdminDashboardContextwrapper>
+            }
+          />
+        </Route>
+
+        {/* error page  */}
+        <Route
+          path="*"
+          element={
+            <ErrorPage
+              funcNav={setMainNavShow}
+              funcUsrDashboardNav={setuserDashboardNavShow}
+              funcmainFooter={setmainFooterShow}
             />
           }
         />
       </Routes>
-
-      <MainFotter />
+      {mainFooterShow && <MainFotter />}
     </Router>
   );
 }

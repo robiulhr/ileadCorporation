@@ -9,9 +9,10 @@ import Googlemap from "../components/pageComponent/googlemap";
 import HeadingParagraphBtn from "../components/globalComponent/InputtextAndBtn/headingParagraphBtn";
 
 const Contact = (props) => {
-  const { funcNav ,funcUsrDashboardNav} = props;
+  const { funcNav ,funcUsrDashboardNav,funcmainFooter} = props;
   funcNav(true);
   funcUsrDashboardNav(false)
+  funcmainFooter(true)
   return (
     <div>
       <div className="container"></div>

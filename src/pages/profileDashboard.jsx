@@ -3,12 +3,13 @@ import ShortNav from "../components/globalComponent/NavAndFooter/shortNav";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import StandartTab from "../components/globalComponent/TabSection/standartTab";
 import PricingStandardContent from "../content/pricingStandard";
-import PricingStandardDescription02 from "../components/pageComponent/pricing/pricingStandardDescription02";
+import PricingStandardDescription02 from "../components/pageComponent/Home/pricing/pricingStandardDescription02";
 import PricingStandrdDescriptionContent from "../content/pricingStandrdDescriptionContent";
 const ProfileDashboard = (props) => {
-  const { funcNav,funcUsrDashboardNav } = props;
+  const { funcNav,funcUsrDashboardNav,funcmainFooter } = props;
   funcNav(false);
   funcUsrDashboardNav(true)
+  funcmainFooter(true)
   return (
     <>
 

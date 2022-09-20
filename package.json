@@ -16,6 +16,7 @@
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.3.0",
     "react-slick": "^0.29.0",
+    "recharts": "^2.1.14",
     "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
   },

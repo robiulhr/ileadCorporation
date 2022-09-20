@@ -4,9 +4,10 @@ import CustomerReport from "../components/pageComponent/customerReport";
 import avatar from "../assets/img/customerCare-page/avatar.png";
 
 const CustomerCare = (props) => {
-  const { funcNav ,funcUsrDashboardNav} = props;
+  const { funcNav ,funcUsrDashboardNav,funcmainFooter} = props;
   funcNav(true);
   funcUsrDashboardNav(false)
+  funcmainFooter(true)
   return (
     <div>
       <div className="container">

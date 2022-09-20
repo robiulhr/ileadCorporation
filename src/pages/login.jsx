@@ -4,9 +4,10 @@ import SigninForm from "../components/pageComponent/signinForm";
 import SignupAndLoginTamplate from "../components/pageComponent/signupAndLoginTamplate";
 
 const Login = (props) => {
-  const { funcNav ,funcUsrDashboardNav} = props;
+  const { funcNav ,funcUsrDashboardNav,funcmainFooter} = props;
   funcNav(false);
   funcUsrDashboardNav(false)
+  funcmainFooter(true)
   return (
     <div className="">
       <SignupAndLoginNav title="Create your account for fast growth" />

@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  mode: 'jit',
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
     "./node_modules/react-responsive-carousel/lib/js/**/*.js",
@@ -10,28 +11,41 @@ module.exports = {
     extend: {
       backgroundImage: {
         "down-arrow": "url('/src/assets/img/random/Vector.png')",
+        "admin-page-bg": "url('/src/assets/img/admin/admin-page-bg.png')"
       },
       colors: {
         info: "rgba(188, 211, 250, 1)",
         danger: "rgba(255, 202, 213, 1)",
         success: "rgba(211, 255, 176, 1)",
-        "balon-1": "rgba(86, 86, 86, 0.3)",
-        "balon-2": "rgba(0, 50, 139, 0.2)",
-        "balon-3": "rgba(33, 107, 238, 0.25)",
+        "balon":{
+          1: "rgba(86, 86, 86, 0.3)",
+          2:"rgba(0, 50, 139, 0.2)",
+          3:"rgba(33, 107, 238, 0.25)"
+        },
         "lightest-blue": "#3b82f61c",
         "lighter-blue": "#3b82f64f",
         "normal-light-blue": {
           100: "#95BBFF",
           300: "rgba(149, 187, 255, 0.3)",
         },
-        "primary-blue": "#216BEE",
-        "normal-dark-blue": "#00328B",
+        "primary-blue":{
+          100: "#216BEE",
+          400:"rgba(43, 119, 255, 0.4)",
+          600:"rgba(43, 119, 255, 0.6)"
+
+        },
+        "normal-dark-blue": {
+          100: "#00328B",
+          300:"rgba(0, 50, 139, 0.3)",
+          400:"rgba(43, 119, 255, 0.3)"
+        },        
         "primary-gray": {
           100: "rgba(86, 86, 86, 1)",
           600: "rgba(86, 86, 86, 0.6)          ",
         },
         "primary-white": {
           100: "rgba(255, 255, 255, 1)",
+          200:"rgba(255, 255, 255, 0.2)",
           700: "rgba(255, 255, 255, 0.7)",
         },
         "light-white": {

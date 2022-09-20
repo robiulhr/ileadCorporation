@@ -1,5 +1,5 @@
 import React from "react";
-import avatar from "../../../assets/img/avatar.png";
+import avatar from "../../../../assets/img/avatar.png";
 import AddLocationIcon from "@mui/icons-material/AddLocation";
 const AvatarCart = () => {
   return (

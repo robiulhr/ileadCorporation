@@ -6,9 +6,14 @@
 @layer base{
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
+
   *{
     font-family: 'Roboto', sans-serif;
     font-style:normal;
+  }
+  body{
+    overflow-x:hidden;
+
   }
   .smallForm input{
     @apply !rounded-[.7rem] !px-[2rem] !py-5
@@ -23,6 +28,9 @@
   input[type="checkbox"]{
     clip-path: circle(61% at 50% 49%);
 
+  }
+  input::placeholder{
+    @apply text-primary-white-200
   }
   select{
     background-position-x :95% !important;
@@ -42,7 +50,7 @@
   div.option[data-checked]{
       @apply !bg-black
   }
-
+ 
 }
 
 @layer components{
@@ -73,7 +81,7 @@
 
    /* input feild design css  */
     label.input-feild-label{
-    @apply absolute top-[0.9rem] left-[3rem] px-2 font-bold transition-all ease-in-out	text-normal-light-blue-100 text-xl
+    @apply absolute top-[0.9rem] left-[3rem] px-2 font-bold transition-all ease-in-out peer-focus:top-[-2rem] peer-focus:bg-transparent	text-normal-light-blue-100 text-xl
     }
     input:not([type='submit']).input-feild {
       @apply  pl-14 pr-5 py-4 border-2 rounded-[20px] border-normal-light-blue-100 outline-0 text-normal-light-blue-100
@@ -89,10 +97,10 @@
     @apply py-2 px-4 rounded-3xl border-primary-gray-100 hover:text-primary-white-100 hover:bg-normal-light-blue-100 hover:border-primary-white-100 transition-all
   }
   .btn-primary-blue-transparent{
-    @apply py-4 px-20 rounded-2xl font-bold bg-primary-blue border-2 border-primary-blue text-white text-[1.5rem] hover:bg-transparent hover:border-primary-blue hover:text-primary-blue transition-all
+    @apply py-4 px-20 rounded-2xl font-bold bg-primary-blue-100 border-2 border-primary-blue-100 text-white text-[1.5rem] hover:bg-transparent hover:border-primary-blue-100 hover:text-primary-blue-100 transition-all
   }
   .btn-primary-transparent-blue{
-    @apply py-4 px-20 rounded-2xl font-bold hover:bg-primary-blue hover:text-white text-[1.5rem] bg-transparent border-primary-blue text-primary-blue transition-all
+    @apply py-4 px-20 rounded-2xl font-bold hover:bg-primary-blue-100 hover:text-white text-[1.5rem] bg-transparent border-primary-blue-100 text-primary-blue-100 transition-all
   }
   /* findnow button css  */
   .btn-findNowbtn-wrapper div{
@@ -112,16 +120,16 @@
     @apply  pl-14 pr-5 py-4 min-w-[450px] border border-normal-light-blue-100 rounded-l-md outline-0 text-normal-light-blue-100
   }
   .btn-findNowbtn-wrapper input[type='submit']{
-    @apply  px-20 py-4 bg-primary-blue text-white rounded-r-md	text-[1.1rem] font-bold hover:bg-transparent hover:border transition border hover:text-primary-blue hover:border-primary-blue
+    @apply  px-20 py-4 bg-primary-blue-100 text-white rounded-r-md	text-[1.1rem] font-bold hover:bg-transparent hover:border transition border hover:text-primary-blue-100 hover:border-primary-blue-100
   }
 
   
   /* text css here  */
   .main-heading-primary-blue{
-    @apply text-[4rem] tracking-tight font-black leading-20 text-primary-blue		
+    @apply text-[4rem] tracking-tight font-black leading-20 text-primary-blue-100		
   }
   .main-heading-dark-blue{
-    @apply text-[4rem] tracking-tight font-black leading-20 text-normal-dark-blue		
+    @apply text-[4rem] tracking-tight font-black leading-20 text-normal-dark-blue-100		
   }
 
   .main-heading-black{
@@ -138,7 +146,7 @@
   }
 
   .main-paragraph-primary-blue{
-    @apply text-xl text-primary-blue font-[500]
+    @apply text-xl text-primary-blue-100 font-[500]
   }
   /* nav bar logo css */
   .main-nav-logo{
@@ -179,11 +187,11 @@
     @apply text-center text-[2.5rem] px-20 mb-20 text-gray-600 font-extrabold
   }
   .dashboard-findbtn-heading span{
-    @apply text-normal-dark-blue
+    @apply text-normal-dark-blue-100
   }
   /* main-footer css */ 
   .main-footer-wrapper{
-    @apply px-[3rem] pt-20 pb-5 bg-normal-dark-blue
+    @apply px-[3rem] pt-20 pb-5 bg-normal-dark-blue-100
   }
   .main-footer-list li:not(:first-child){
     @apply text-lg text-light-white-500 m-3 hover:text-white
@@ -227,11 +235,11 @@
 
  /* blog page carousel design css */ 
  .carousel .control-dots .dot{
-    @apply !bg-primary-blue !w-[12px] !h-[12px]
+    @apply !bg-primary-blue-100 !w-[12px] !h-[12px]
   
  }
  .slick-arrow {
-  @apply !bg-primary-blue
+  @apply !bg-primary-blue-100
  }
 
  .slick-slide > div{
@@ -245,20 +253,20 @@
   @apply !h-[50px] w-[50px] !rounded-full !border-none
  }
  .rc-pagination-item-active{
-  @apply !bg-normal-dark-blue hover:!bg-transparent hover:!text-normal-dark-blue !text-white hover:!border-normal-dark-blue
+  @apply !bg-normal-dark-blue-100 hover:!bg-transparent hover:!text-normal-dark-blue-100 !text-white hover:!border-normal-dark-blue-100
  }
 
  .rc-pagination-item-active a{
-  @apply !text-white hover:!text-normal-dark-blue 
+  @apply !text-white hover:!text-normal-dark-blue-100 
  }
  .rc-pagination-item a{
-    @apply !text-[1.3rem] !py-[10px] hover:text-normal-dark-blue
+    @apply !text-[1.3rem] !py-[10px] hover:text-normal-dark-blue-100
  }
  .rc-pagination-prev{
   @apply !mr-4
  }
  .rc-pagination-next,.rc-pagination-prev{
-  @apply !h-[50px] pt-[12px] w-[80px] mx-5 text-[1.2rem] bg-normal-dark-blue !text-white !rounded-full 
+  @apply !h-[50px] pt-[12px] w-[80px] mx-5 text-[1.2rem] bg-normal-dark-blue-100 !text-white !rounded-full 
  }
  .rc-pagination-next button,.rc-pagination-prev button{
   @apply !text-white
@@ -321,7 +329,7 @@
 }
 
 .cart{
-  @apply bg-normal-dark-blue rounded-full h-[40px] w-[40px] text-center p-1 py-2
+  @apply bg-normal-dark-blue-100 rounded-full h-[40px] w-[40px] text-center p-1 py-2
 }
 .cart svg{
   @apply text-white text-[1.6rem]
@@ -334,12 +342,29 @@
   @apply !rounded-lg
 }
 .priveryAndTermsLink {
-  @apply text-primary-blue hover:text-normal-dark-blue mx-3 text-[1.1rem]
+  @apply text-primary-blue-100 hover:text-normal-dark-blue-100 mx-3 text-[1.1rem]
 }
 .signupAndLogin-small-paragraph{
   @apply text-normal-light-blue-100 text-lg text-center
 }
 
 
+/* admin panel css */ 
+.admin-login input{
+ @apply !rounded-lg !px-4 !border-primary-white-200
+}
+.admin-login label{
+ @apply text-[1rem] left-4 peer-focus:!top-[0rem]
+}
+
+/* admin dashboard sidebar */
+.admin-sidebar-menu li{
+  @apply hover:text-primary-blue-100 border-r-2 w-full border-transparent hover:border-primary-blue-100 text-light-white-500 !inline-block my-2
+}
+
+
+label[style]{
+  @apply !text-white
+}
 }
 

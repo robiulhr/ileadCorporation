@@ -1,13 +1,14 @@
 import React from "react";
 import UserDashboardNav from "../components/globalComponent/NavAndFooter/userDashboardNav";
 import PaginationDiv from "../components/globalComponent/pagination";
-import SearchResultSection from "../components/pageComponent/search/searchResultSection";
-import SearchSingleItem from "../components/pageComponent/search/searchSingleItem";
+import SearchResultSection from "../components/pageComponent/Home/search/searchResultSection";
+import SearchSingleItem from "../components/pageComponent/Home/search/searchSingleItem";
 import CustomSelectInput from "../components/globalComponent/InputtextAndBtn/customSelectInput";
 const Search = (props) => {
-  const { funcNav,funcUsrDashboardNav } = props;
+  const { funcNav,funcUsrDashboardNav,funcmainFooter } = props;
   funcNav(false);
   funcUsrDashboardNav(true)
+  funcmainFooter(true)
   return (
     <>
       <div className="container">

@@ -11,9 +11,10 @@ import FrequentlyAskedQustion from "../components/globalComponent/frequentlyAske
 import FrequentlyAskedQuestionsContent from "../content/frequentlyAskedQuestionsContent";
 import HeadingParagraphBtn from "../components/globalComponent/InputtextAndBtn/headingParagraphBtn";
 const SalesCrm = (props) => {
-  const { funcNav ,funcUsrDashboardNav} = props;
+  const { funcNav ,funcUsrDashboardNav,funcmainFooter} = props;
   funcNav(true);
   funcUsrDashboardNav(false)
+  funcmainFooter(true)
   return (
     <>
       <div className="container">

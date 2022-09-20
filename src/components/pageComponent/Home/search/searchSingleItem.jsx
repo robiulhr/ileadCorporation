@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import avatar from "../../../assets/img/avatar-small.png";
+import avatar from "../../../../assets/img/avatar-small.png";
 const SearchSingleItem = () => {
   return (
     <div className="flex-row-center-between px-10 border shadow">

@@ -17,7 +17,7 @@ const MainnavBar = () => {
         <div className="lg:w-5/12 w-9/12">
           <ul className="main-nav-menu flex-row-center-between">
             <li>
-              <Link to="/">Home</Link>
+              <Link activeClassName='is-active' to="/">Home</Link>
             </li>
             <li className="relative group">
               <span className="cursor-default">
@@ -39,6 +39,9 @@ const MainnavBar = () => {
                 </li>
                 <li>
                   <Link to="/profiledashboard">Profile Dashboard</Link>
+                </li>
+                <li>
+                  <Link to="/admin/dashboard">Admin Dashboard</Link>
                 </li>
               </ul>
             </li>

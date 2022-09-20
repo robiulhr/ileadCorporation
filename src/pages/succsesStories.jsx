@@ -10,15 +10,16 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import FiftyFiftyDivContent from "../components/globalComponent/twoDivInRow/fiftyFiftyDivContent";
 import succsessStoriesSliderContent from "../content/succsessStoriesSliderContent";
-import ReviewsPageSliderContentLeft from "../components/pageComponent/reviews/reviewsPageSliderContentLeft";
-import ReviewsPageSliderContentRight from "../components/pageComponent/reviews/reviewsPageSliderContentRight";
+import ReviewsPageSliderContentLeft from "../components/pageComponent/Home/reviews/reviewsPageSliderContentLeft";
+import ReviewsPageSliderContentRight from "../components/pageComponent/Home/reviews/reviewsPageSliderContentRight";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import Inputfeild from "../components/globalComponent/InputtextAndBtn/inputfeild";
 import SearchIcon from "@mui/icons-material/Search";
 const SuccsesStories = (props) => {
-  const { funcNav,funcUsrDashboardNav } = props;
+  const { funcNav,funcUsrDashboardNav,funcmainFooter } = props;
   funcNav(true);
   funcUsrDashboardNav(false)
+  funcmainFooter(true)
   return (
     <div className="SuccsesStories">
       <div className="container pt-20">

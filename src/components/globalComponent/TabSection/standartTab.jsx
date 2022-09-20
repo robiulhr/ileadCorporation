@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import PricingStandard from "../../pageComponent/pricing/pricingStandard";
+import PricingStandard from "../../pageComponent/Home/pricing/pricingStandard";
 
 const StandartTab = (props) => {
   const { List, children } = props;

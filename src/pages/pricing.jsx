@@ -5,12 +5,13 @@ import PricingPrimaryContent from "../content/pricingPrimary";
 import PricingPrimary from "../components/globalComponent/pricing/pricingPrimary";
 import PricingStandardContent from "../content/pricingStandard";
 import StandartTab from "../components/globalComponent/TabSection/standartTab";
-import PricingStandardDesCription01 from "../components/pageComponent/pricing/pricingStandardDesCription01";
+import PricingStandardDesCription01 from "../components/pageComponent/Home/pricing/pricingStandardDesCription01";
 import PricingStandrdDescriptionContent from "../content/pricingStandrdDescriptionContent";
 const Pricing = (props) => {
-  const { funcNav ,funcUsrDashboardNav} = props;
+  const { funcNav ,funcUsrDashboardNav,funcmainFooter} = props;
   funcNav(true);
   funcUsrDashboardNav(false)
+  funcmainFooter(true)
   return (
     <div className="pricingPage" id="pricingPage">
       <div className="container">

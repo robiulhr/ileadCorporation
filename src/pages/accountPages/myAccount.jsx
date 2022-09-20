@@ -1,8 +1,9 @@
 import React from 'react';
 const MyAccount = (props) => {
-    const {funcNav,funcUsrDashboardNav} = props
+    const {funcNav,funcUsrDashboardNav,funcmainFooter} = props
     funcNav(false)
     funcUsrDashboardNav(true)
+    funcmainFooter(false)
     return (
         <div>
             

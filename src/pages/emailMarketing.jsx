@@ -10,9 +10,10 @@ import HeadingAndSignupBtn from "../components/globalComponent/InputtextAndBtn/h
 import FrequentlyAskedQustion from "../components/globalComponent/frequentlyAskedQustion";
 import FrequentlyAskedQuestionsContent from "../content/frequentlyAskedQuestionsContent";
 const EmailMarketing = (props) => {
-  const { funcNav ,funcUsrDashboardNav} = props;
+  const { funcNav ,funcUsrDashboardNav,funcmainFooter} = props;
   funcNav(true);
   funcUsrDashboardNav(false)
+  funcmainFooter(true)
   return (
     <>
       <div className="container">

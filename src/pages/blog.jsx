@@ -11,11 +11,16 @@ import BlogContent from "../content/blog";
 import sliderBlogContent from "../content/sliderBlogContent";
 import Pagination from "../components/globalComponent/pagination";
 import DashboardpageContentSection from "../components/globalComponent/twoDivInRow/twoDivInnercontentSection";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import Inputfeild from "../components/globalComponent/InputtextAndBtn/inputfeild";
+
 
 const Blog = (props) => {
-  const { funcNav ,funcUsrDashboardNav} = props;
+  const { funcNav, funcUsrDashboardNav, funcmainFooter } = props;
   funcNav(true);
-  funcUsrDashboardNav(false)
+  funcUsrDashboardNav(false);
+  funcmainFooter(true);
+
   return (
     <div>
       <div className="container">
@@ -66,18 +71,23 @@ const Blog = (props) => {
             </ImgNdestwosec>
           </div>
         </Carousel>
-        <ShortNav
-          searchFeild
-          items={[
-            { Title: "Newest", dropDown: false },
-            { Title: "POPULAR", dropDown: false },
-            {
-              Title: "CATEGORIES",
-              dropDown: true,
-              dropDownItem: ["item1", "item2"],
-            },
-          ]}
-        />
+        <ShortNav>
+          <li className="hover:text-primary-blue">Newest</li>
+          <li className="hover:text-primary-blue">POPULAR</li>
+          <li className="relative group ">
+          <span className="cursor-default flex-row-center">
+              CATEGORIES
+                <ArrowDropDownIcon />
+              </span>
+            <ul className="main-nav-dropdown-menu flex-row-center">
+              <li>item1</li>
+              <li>item2</li>
+            </ul>
+          </li>
+          <Inputfeild
+              label="search"
+          />
+        </ShortNav>
       </div>
       <SmallComSlider items={sliderBlogContent} />
       <HeadingAndSignupBtn />

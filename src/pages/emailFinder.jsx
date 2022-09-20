@@ -10,9 +10,10 @@ import FrequentlyAskedQuestionsContent from "../content/frequentlyAskedQuestions
 import HeadingParagraphBtn from "../components/globalComponent/InputtextAndBtn/headingParagraphBtn";
 import FindNowBtn from "../components/globalComponent/InputtextAndBtn/findNowBtn";
 const EmailFinder = (props) => {
-  const { funcNav ,funcUsrDashboardNav} = props;
+  const { funcNav ,funcUsrDashboardNav,funcmainFooter} = props;
   funcNav(true);
   funcUsrDashboardNav(false)
+  funcmainFooter(true)
   return (
     <>
       <div className="container">
