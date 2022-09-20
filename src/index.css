@@ -56,6 +56,9 @@
 @layer components{
   /* global css */
   
+  .flex-row-center-end{
+    @apply flex items-center justify-end flex-row
+  }
   .flex-row-center-between{
     @apply flex items-center justify-between flex-row
   }

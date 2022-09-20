@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import {
   BarChart,
   Bar,
@@ -14,42 +14,67 @@ import {
 const data = [
   {
     name: "Jan",
-    pv: 400,
+    sales: 400,
     amt: 2400,
     bg: "rgba(114, 183, 242, 1)",
   },
   {
     name: "Feb",
-    pv: 398,
+    sales: 398,
     amt: 2210,
     bg: "rgba(69, 160, 237, 1)",
   },
   {
     name: "Mar",
-    pv: 300,
+    sales: 300,
     amt: 2290,
     bg: "rgba(22, 136, 232, 1)",
   },
   {
     name: "Apr",
-    pv: 308,
+    sales: 308,
     amt: 2000,
     bg: "rgba(18, 109, 186, 1)",
   },
   {
     name: "May",
-    pv: 450,
+    sales: 450,
     amt: 2181,
     bg: "rgba(13, 81, 139, 1)",
   },
   {
     name: "Jun",
-    pv: 300,
+    sales: 300,
     amt: 2500,
-    bg: "rgba(11, 63, 108, 1)",
+    bg: "#0b3f6c",
   },
 ];
+
+
+const renderLegend = (props) => {
+  const { payload } = props;
+  return (
+    <ul className="flex-row-center-around">
+      {
+        payload.map((entry, index) => (
+          <li key={`item-${index}`} className="text-light-white-500 text-[.8rem] flex"><span className={`w-[15px] mx-2 h-[15px] bg-[${entry.bg}] mt-1`}></span> {entry.name}</li>
+        ))
+      }
+    </ul>
+  );
+}
+
+
 const SimpleBarChart = () => {
+  const [activeIndex,setactiveIndex] =  useState(0)
+
+const handleMouseOver = (data, index) => {
+      setactiveIndex(index)
+}
+useEffect(() => {
+  console.log(activeIndex)
+  
+}, [activeIndex]);
   return (
     <>
       <ResponsiveContainer width="100%" height="100%">
@@ -65,9 +90,29 @@ const SimpleBarChart = () => {
           }}
           barCategoryGap={1}
         >
-          <CartesianGrid  strokeDasharray="3" />
-          <XAxis dataKey="name" padding={{ left: 50, right: 50 }} strokeWidth={3} stroke={"#216BEE"}  />
-          <YAxis type="number" domain={[100, 560]}   strokeWidth={3} stroke={"#216BEE"} tickCount={10} />
+          <CartesianGrid
+            strokeDasharray="3"
+            horizontalPoints={[
+              55, 105, 155, 205, 255, 305
+            ]}
+            verticalPoints={[
+              100, 150, 200, 250, 300, 350, 400
+            ]}
+          />
+          <XAxis
+            dataKey="name"
+            padding={{ left: 50, right: 50 }}
+            strokeWidth={3}
+            stroke={"#216BEE"}
+            tick={false} 
+            
+          />
+          <YAxis
+            domain={[100, 560]}
+            strokeWidth={3}
+            stroke={"#216BEE"}
+            tickCount={7}
+          />
           <Tooltip
             wrapperStyle={{
               background: "#216BEE",
@@ -81,18 +126,25 @@ const SimpleBarChart = () => {
               outline: "none",
               color: "white",
             }}
-            cursor={{fill:"rgba(0, 50, 139, 0.3)"}} 
+            cursor={{ fill: "rgba(0, 50, 139, 0.3)" }}
             itemStyle={{ color: "white" }}
           />
-            <Legend />
+          <Legend payload={data} content={renderLegend} />
+          
 
-          <Bar dataKey="pv" animationBegin={5} animationDuration={2000} label={false} >
+          <Bar
+            dataKey="sales"
+            animationBegin={5}
+            animationDuration={2000}
+            label={false}
+            onMouseOver={handleMouseOver}
+          >
             {data.map((entry, index) => (
               <Cell
                 key={`cell-${index}`}
                 fill={entry.bg}
-                strokeWidth={index === 2 ? 4 : 1}
-                onMouseOver={(e)=>{console.log(e)}}
+                stroke={"#2f6Bce"}
+                strokeWidth={index===activeIndex?4:0}
               />
             ))}
           </Bar>

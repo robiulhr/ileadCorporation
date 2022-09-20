@@ -9,6 +9,7 @@ import FourDivRow from "../../components/pageComponent/adminPages/fourDivRow";
 import SimpleBarChart from "../../components/pageComponent/adminPages/SimpleBarChart";
 import CustomActiveShapePieChart from "../../components/pageComponent/adminPages/customActiveShapePieChart";
 import SelectMui from "../../components/globalComponent/InputtextAndBtn/selectMui";
+import PaieChartLatestHistory from "../../components/pageComponent/adminPages/paieChartLatestHistory";
 const AdminDashboard = (props) => {
   const { funcNav, funcUsrDashboardNav, funcmainFooter } = props;
   funcNav(false);
@@ -63,29 +64,46 @@ const AdminDashboard = (props) => {
             </div>
           </div>
           <div className="flex-row-center mb-10 h-[600px]">
-            <div className="w-[41%] h-full bg-normal-dark-blue-400 p-10 pb-32 ml-2">
+            <div className="w-[41%] h-full bg-normal-dark-blue-400 p-10 pb-32 ml-2 rounded-2xl">
               <div className="flex justify-end">
                 <button className="btn btn-primary-blue-transparent text-[.6rem] px-3 py-1 rounded-lg">
                   View
                 </button>
               </div>
               <div className="my-4 flex-row-center justify-start">
-               <p className=" text-primary-white-200 inline-block ml-10 mr-2">Sales Report Chart</p> <SelectMui />
+                <p className=" text-primary-white-200 inline-block ml-10 mr-2">
+                  Sales Report Chart
+                </p>{" "}
+                <SelectMui />
               </div>
               <SimpleBarChart />
             </div>
-            <div className="w-[26%] bg-normal-dark-blue-400 mx-8 h-full flex-coloum-center">
-              <div className="h-[360px] w-full">
+            <div className="w-[26%] bg-normal-dark-blue-400 mx-8 h-full flex-coloum-center rounded-2xl">
+              <div className="w-full px-8 mt-10  flex-row-center-end">
+                <button className="btn btn-primary-blue-transparent text-[.6rem] px-3 py-1 rounded-lg">
+                  View
+                </button>
+              </div>
+              <div className="h-[270px] w-full">
                 <CustomActiveShapePieChart />
               </div>
-              <div className="h-[200px] w-full"></div>
+              <div className="h-[250px] w-full">
+                <PaieChartLatestHistory />
+              </div>
             </div>
 
-            <div className="w-[26%] bg-normal-dark-blue-400 h-full flex-coloum-center">
-              <div className="h-[360px] w-full">
+            <div className="w-[26%] bg-normal-dark-blue-400 h-full flex-coloum-center rounded-2xl">
+              <div className="w-full px-8 mt-10  flex-row-center-end">
+                <button className="btn btn-primary-blue-transparent text-[.6rem] px-3 py-1 rounded-lg">
+                  View
+                </button>
+              </div>
+              <div className="h-[270px] w-full">
                 <CustomActiveShapePieChart />
               </div>
-              <div className="h-[200px] w-full"></div>
+              <div className="h-[250px] w-full">
+                <PaieChartLatestHistory />
+              </div>
             </div>
           </div>
           <div>

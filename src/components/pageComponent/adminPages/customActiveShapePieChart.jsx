@@ -1,27 +1,31 @@
 import React, { useState } from 'react';
-import { PieChart, Pie, Sector, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie, Sector, ResponsiveContainer,Legend,Cell,Tooltip } from 'recharts';
 
 const data = [
-  { name: 'Group A', value: 400 },
-  { name: 'Group B', value: 300 },
-  { name: 'Group C', value: 300 },
-  { name: 'Group D', value: 200 },
+  { name: 'Active', value: 400 ,bg:"rgba(114, 183, 242, 1)"},
+  { name: 'Deactive', value: 300,bg:"rgba(22, 136, 232, 1)" },
+  { name: 'Banned', value: 300 ,bg:"rgba(13, 81, 139, 1)"},
 ];
+
+
+const renderLegend = (props) => {
+  const { payload } = props;
+  return (
+    <ul className="flex-row-center-around p-1">
+      {
+        payload.map((entry, index) => (
+          <li key={`item-${index}`} className="text-light-white-500 text-[.8rem] flex"><span className={`w-[15px] mx-2 h-[15px] bg-[${entry.bg}] mt-1`}></span> {entry.name}</li>
+        ))
+      }
+    </ul>
+  );
+}
+
 
 
 
 const renderActiveShape = (props) => {
-    const RADIAN = Math.PI / 180;
-    const { cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle, fill, payload, percent, value } = props;
-    const sin = Math.sin(-RADIAN * midAngle);
-    const cos = Math.cos(-RADIAN * midAngle);
-    const sx = cx + (outerRadius + 10) * cos;
-    const sy = cy + (outerRadius + 10) * sin;
-    const mx = cx + (outerRadius + 30) * cos;
-    const my = cy + (outerRadius + 30) * sin;
-    const ex = mx + (cos >= 0 ? 1 : -1) * 22;
-    const ey = my;
-    const textAnchor = cos >= 0 ? 'start' : 'end';
+    const { cx, cy, innerRadius, outerRadius, startAngle, endAngle, fill, payload } = props;
   
     return (
       <g>
@@ -46,12 +50,6 @@ const renderActiveShape = (props) => {
           outerRadius={outerRadius + 10}
           fill={fill}
         />
-        <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none" />
-        <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none" />
-        <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill="#333">{`PV ${value}`}</text>
-        <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={18} textAnchor={textAnchor} fill="#999">
-          {`(Rate ${(percent * 100).toFixed(2)}%)`}
-        </text>
       </g>
     );
   };
@@ -68,19 +66,41 @@ const CustomActiveShapePieChart = () => {
 
     return (
       <ResponsiveContainer width="100%" height="100%">
-        <PieChart width={400} height={400}>
+        <PieChart width={300} height={300}>
           <Pie
             activeIndex={activeIndex}
             activeShape={renderActiveShape}
             data={data}
             cx="50%"
             cy="50%"
-            innerRadius={60}
-            outerRadius={80}
+            innerRadius={80}
+            outerRadius={110}
             fill="#8884d8"
             dataKey="value"
             onMouseEnter={onPieEnter}
+          >
+            {data.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={entry.bg}  />
+            ))}
+          </Pie>
+          
+          <Tooltip
+            wrapperStyle={{
+              background: "#216BEE",
+              border: "none",
+              outline: "none",
+            }}
+            contentStyle={{
+              background: "transparent",
+              border: "none",
+              margin: "10px",
+              outline: "none",
+              color: "white",
+            }}
+            cursor={{ fill: "rgba(0, 50, 139, 0.3)" }}
+            itemStyle={{ color: "white" }}
           />
+          <Legend payload={data} content={renderLegend} />
         </PieChart>
       </ResponsiveContainer>
     );
