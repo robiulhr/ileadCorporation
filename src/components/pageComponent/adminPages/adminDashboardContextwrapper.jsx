@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { AdminContext } from '../../context/appContext';
+import { AdminContext } from '../../../context/appContext';
 
 const AdminDashboardContextwrapper = ({children}) => {
     const [adminSidebarShow,setAdminSidebarShow ]= useState(false);

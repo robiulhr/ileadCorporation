@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import { AdminContext } from "../../../context/appContext";
 import lightLogo from "../../../assets/img/logo/light-logo.png";
@@ -20,7 +21,9 @@ const AdminDashboardNav = () => {
           sx={{ color: "white", cursor: "pointer", display: "inline-block" }}
           onClick={handleSidebarShow}
         />
-        <img src={lightLogo} alt="" className="w-[150px] inline-block mx-10" />
+        <Link to={"/admin/dashboard"}>
+          <img src={lightLogo} alt="" className="w-[150px] inline-block mx-10" />
+        </Link>
       </div>
       <div className="flex-row-center">
         <IconButton size="large" aria-label="search" color="inherit">

@@ -1,7 +1,7 @@
 import React from 'react';
 import Inputfeild from '../../components/globalComponent/InputtextAndBtn/inputfeild';
 import PasswordInput from '../../components/globalComponent/InputtextAndBtn/passwordInput';
-import AdminPagesWrapper from './adminPagesWrapper';
+import AdminPagesWrapper from '../../components/pageComponent/adminPages/adminPagesWrapper';
 const AdminLogin = (props) => {
     const {funcNav,funcUsrDashboardNav,funcmainFooter} = props
     funcNav(false)

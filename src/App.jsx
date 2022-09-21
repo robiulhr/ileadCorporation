@@ -23,7 +23,11 @@ import MyAccount from "./pages/accountPages/myAccount";
 import AdminLogin from "./pages/adminDashboardPages/adminLogin";
 import ErrorPage from "./pages/errorPage";
 import AdminDashboard from "./pages/adminDashboardPages/adminDashboard";
-import AdminDashboardContextwrapper from "./pages/adminDashboardPages/adminDashboardContextwrapper";
+import AdminDashboardContextwrapper from "./components/pageComponent/adminPages/adminDashboardContextwrapper";
+import SalesAnalytics from "./pages/adminDashboardPages/salesAnalytics";
+import UserAnalytics from "./pages/adminDashboardPages/userAnalytics";
+import LeadsAnalytics from "./pages/adminDashboardPages/leadsAnalytics";
+import Profile from "./pages/adminDashboardPages/profile";
 function App() {
   const [mainNabShow, setMainNavShow] = useState(true);
   const [userDashboardNavShow, setuserDashboardNavShow] = useState(true);
@@ -241,6 +245,58 @@ function App() {
             element={
               <AdminDashboardContextwrapper>
                 <AdminDashboard
+                  funcNav={setMainNavShow}
+                  funcUsrDashboardNav={setuserDashboardNavShow}
+                  funcmainFooter={setmainFooterShow}
+                />
+              </AdminDashboardContextwrapper>
+            }
+          />
+          <Route
+            exact
+            path="/admin/salesanalytics"
+            element={
+              <AdminDashboardContextwrapper>
+                <SalesAnalytics
+                  funcNav={setMainNavShow}
+                  funcUsrDashboardNav={setuserDashboardNavShow}
+                  funcmainFooter={setmainFooterShow}
+                />
+              </AdminDashboardContextwrapper>
+            }
+          />
+           <Route
+            exact
+            path="/admin/useranalytics"
+            element={
+              <AdminDashboardContextwrapper>
+                <UserAnalytics
+                  funcNav={setMainNavShow}
+                  funcUsrDashboardNav={setuserDashboardNavShow}
+                  funcmainFooter={setmainFooterShow}
+                />
+              </AdminDashboardContextwrapper>
+            }
+          />
+           <Route
+            exact
+            path="/admin/leadanalytics"
+            element={
+              <AdminDashboardContextwrapper>
+                <LeadsAnalytics
+                  funcNav={setMainNavShow}
+                  funcUsrDashboardNav={setuserDashboardNavShow}
+                  funcmainFooter={setmainFooterShow}
+                />
+              </AdminDashboardContextwrapper>
+            }
+          />
+           <Route
+            exact
+            path="/admin/profile"
+            element={
+              <AdminDashboardContextwrapper>
+                <Profile
                   funcNav={setMainNavShow}
                   funcUsrDashboardNav={setuserDashboardNavShow}
                   funcmainFooter={setmainFooterShow}

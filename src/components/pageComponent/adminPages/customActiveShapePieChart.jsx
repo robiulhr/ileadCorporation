@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
 import { PieChart, Pie, Sector, ResponsiveContainer,Legend,Cell,Tooltip } from 'recharts';
 
-const data = [
-  { name: 'Active', value: 400 ,bg:"rgba(114, 183, 242, 1)"},
-  { name: 'Deactive', value: 300,bg:"rgba(22, 136, 232, 1)" },
-  { name: 'Banned', value: 300 ,bg:"rgba(13, 81, 139, 1)"},
-];
-
 
 const renderLegend = (props) => {
   const { payload } = props;
@@ -56,7 +50,7 @@ const renderActiveShape = (props) => {
 
 
 
-const CustomActiveShapePieChart = () => {
+const CustomActiveShapePieChart = ({data}) => {
    
   const [activeIndex,setactiveIndex] =  useState(0)
 

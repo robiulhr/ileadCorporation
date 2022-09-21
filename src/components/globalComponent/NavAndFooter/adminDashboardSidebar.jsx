@@ -128,7 +128,7 @@ const AdminDashboardSidebar = () => {
           </p>
           <li>
             <Link
-              to="/admin/dashboard"
+              to="/admin/salesanalytics"
               className="flex-row-center justify-start ml-5 w-full"
             >
               <img src={SaleAnalytics} alt="" className="mx-[10px]" /> Sales
@@ -137,7 +137,7 @@ const AdminDashboardSidebar = () => {
           </li>
           <li>
             <Link
-              to="/admin/dashboard"
+              to="/admin/useranalytics"
               className="flex-row-center justify-start ml-5 w-full"
             >
               <img src={Useranalytics} alt="" className="mx-[10px]" /> User
@@ -146,7 +146,7 @@ const AdminDashboardSidebar = () => {
           </li>
           <li>
             <Link
-              to="/admin/dashboard"
+              to="/admin/leadanalytics"
               className="flex-row-center justify-start ml-5 w-full"
             >
               <BarChartOutlinedIcon sx={{ margin: "0px 10px" }} /> Lead

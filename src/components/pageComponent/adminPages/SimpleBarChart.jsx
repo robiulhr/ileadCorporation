@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React,{useState} from "react";
 import {
   BarChart,
   Bar,
@@ -10,45 +10,6 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-
-const data = [
-  {
-    name: "Jan",
-    sales: 400,
-    amt: 2400,
-    bg: "rgba(114, 183, 242, 1)",
-  },
-  {
-    name: "Feb",
-    sales: 398,
-    amt: 2210,
-    bg: "rgba(69, 160, 237, 1)",
-  },
-  {
-    name: "Mar",
-    sales: 300,
-    amt: 2290,
-    bg: "rgba(22, 136, 232, 1)",
-  },
-  {
-    name: "Apr",
-    sales: 308,
-    amt: 2000,
-    bg: "rgba(18, 109, 186, 1)",
-  },
-  {
-    name: "May",
-    sales: 450,
-    amt: 2181,
-    bg: "rgba(13, 81, 139, 1)",
-  },
-  {
-    name: "Jun",
-    sales: 300,
-    amt: 2500,
-    bg: "#0b3f6c",
-  },
-];
 
 
 const renderLegend = (props) => {
@@ -65,16 +26,12 @@ const renderLegend = (props) => {
 }
 
 
-const SimpleBarChart = () => {
+const SimpleBarChart = ({data}) => {
   const [activeIndex,setactiveIndex] =  useState(0)
 
 const handleMouseOver = (data, index) => {
       setactiveIndex(index)
 }
-useEffect(() => {
-  console.log(activeIndex)
-  
-}, [activeIndex]);
   return (
     <>
       <ResponsiveContainer width="100%" height="100%">
