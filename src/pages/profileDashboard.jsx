@@ -5,11 +5,8 @@ import StandartTab from "../components/globalComponent/TabSection/standartTab";
 import PricingStandardContent from "../content/pricingStandard";
 import PricingStandardDescription02 from "../components/pageComponent/Home/pricing/pricingStandardDescription02";
 import PricingStandrdDescriptionContent from "../content/pricingStandrdDescriptionContent";
-const ProfileDashboard = (props) => {
-  const { funcNav,funcUsrDashboardNav,funcmainFooter } = props;
-  funcNav(false);
-  funcUsrDashboardNav(true)
-  funcmainFooter(true)
+import MainFotter from "../components/globalComponent/NavAndFooter/mainFotter";
+const ProfileDashboard = () => {
   return (
     <>
 
@@ -65,6 +62,7 @@ const ProfileDashboard = (props) => {
           return <PricingStandardDescription02 ind={ind} />;
         })}
       </StandartTab>
+      <MainFotter/>
     </>
   );
 };

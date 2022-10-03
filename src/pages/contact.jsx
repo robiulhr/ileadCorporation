@@ -8,11 +8,7 @@ import MapsUgcIcon from "@mui/icons-material/MapsUgc";
 import Googlemap from "../components/pageComponent/googlemap";
 import HeadingParagraphBtn from "../components/globalComponent/InputtextAndBtn/headingParagraphBtn";
 
-const Contact = (props) => {
-  const { funcNav ,funcUsrDashboardNav,funcmainFooter} = props;
-  funcNav(true);
-  funcUsrDashboardNav(false)
-  funcmainFooter(true)
+const Contact = () => {
   return (
     <div>
       <div className="container"></div>

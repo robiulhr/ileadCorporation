@@ -3,11 +3,7 @@ import FindNowBtn from "../components/globalComponent/InputtextAndBtn/findNowBtn
 import CustomerReport from "../components/pageComponent/customerReport";
 import avatar from "../assets/img/customerCare-page/avatar.png";
 
-const CustomerCare = (props) => {
-  const { funcNav ,funcUsrDashboardNav,funcmainFooter} = props;
-  funcNav(true);
-  funcUsrDashboardNav(false)
-  funcmainFooter(true)
+const CustomerCare = () => {
   return (
     <div>
       <div className="container">

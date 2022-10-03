@@ -8,11 +8,7 @@ import graphicImage04 from "../assets/img/graphic-images/graphic-image-04.png";
 import graphicImage05 from "../assets/img/graphic-images/graphic-image-05.png";
 import FindNowBtn from "../components/globalComponent/InputtextAndBtn/findNowBtn";
 import DashboardpageContentSection from "../components/globalComponent/twoDivInRow/twoDivInnercontentSection";
-const Dashboard = (props) => {
-  const { funcNav ,funcUsrDashboardNav,funcmainFooter} = props;
-  funcNav(true);
-  funcUsrDashboardNav(false);
-  funcmainFooter(true)
+const Dashboard = () => {
   return (
     <>
       <div className="container">

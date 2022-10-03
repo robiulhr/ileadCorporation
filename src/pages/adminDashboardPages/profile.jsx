@@ -3,27 +3,80 @@ import AdminDashboardSidebarNav from "../../components/globalComponent/NavAndFoo
 import AdminPagesWrapper from "../../components/pageComponent/adminPages/adminPagesWrapper";
 import AdminTitle from "../../components/pageComponent/adminPages/adminTitle";
 import AdminDashboardMainContentWrapper from "../../components/pageComponent/adminPages/adminDashboardMainContentWrapper";
-
-const Profile = ({ funcNav, funcUsrDashboardNav, funcmainFooter } ) => {
-    funcNav(false);
-    funcUsrDashboardNav(false);
-    funcmainFooter(false);
-    return (
-        <AdminPagesWrapper>
-        <AdminDashboardSidebarNav>
+import ImageUploadInput from "../../components/globalComponent/InputtextAndBtn/imageUploadInput";
+import Inputfeild from "../../components/globalComponent/InputtextAndBtn/inputfeild";
+import PrimaryBlueSelect from "../../components/globalComponent/muiComponent/primaryBlueSelect";
+const Profile = () => {
+  return (
+    <AdminPagesWrapper>
+      <AdminDashboardSidebarNav>
         <AdminDashboardMainContentWrapper>
-            <div>
-                <AdminTitle title={"Profile"} />
+          <div>
+            <AdminTitle title={"Profile"} />
+          </div>
+          <div className="ml-4 my-10 rounded-lg" id="profile-page">
+            <div className="flex-row-center-between bg-primary-blue-100">
+              <h6 className="text-white text-[1.3rem] mx-10">
+                Profile Settings
+              </h6>
+              <button className="btn btn-transparent-light-blue rounded-xl py-1 px-4 my-3 mx-10">
+                Update
+              </button>
             </div>
-            <div>
-                
+            <div className="flex-row-start-between p-10 bg-normal-dark-blue-400">
+              <div className="w-4/12">
+              <h5 className=" text-primary-white-700 my-3">Profile Image (400px/400px)</h5>
+                <ImageUploadInput label={"Upload Image"} />
+              </div>
+              <div className="w-8/12 px-10 profle-form">
+                <form action="" className="py-4">
+                  <div className="input-div">
+                    <div className="label">Name</div>
+                    <Inputfeild placeholder={"Admin Name"}  />
+                  </div>
+                  <div className="input-div">
+                    <div className="label">Email</div>
+                    <Inputfeild placeholder={"admin@gmail.com"} />
+                  </div>
+                  <div className="input-div">
+                    <div className="label">Phone Numer</div>
+                    <Inputfeild placeholder={"+1 659 893 568"} />
+                  </div>
+                  <div className="input-div">
+                    <div className="label">Address</div>
+                    <Inputfeild placeholder={"United State"} />
+                  </div>
+                  <div className="flex-row-center">
+                    <div className="w-1/2 input-div mr-3">
+                      <div className="label">City</div>
+                      <Inputfeild placeholder={"Orange Park"} />
+                    </div>
+                    <div className="w-1/2 input-div ml-3">
+                      <div className="label">State</div>
+                      <Inputfeild placeholder={"Florida"} />
+                    </div>
+                  </div>
+                  <div className="flex-row-center">
+                    <div className="w-1/2 input-div mr-3">
+                      <div className="label">Zip/Postal</div>
+                      <Inputfeild placeholder={"10011"} />
+                    </div>
+                    <div className="w-1/2 input-div ml-3">
+                    <div className="label">Country</div>
+                     <div className="h-[50px]">
+                      <PrimaryBlueSelect />
+
+                     </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
             </div>
+          </div>
         </AdminDashboardMainContentWrapper>
-         
-          
       </AdminDashboardSidebarNav>
     </AdminPagesWrapper>
-    );
-}
+  );
+};
 
 export default Profile;

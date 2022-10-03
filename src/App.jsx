@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import MainnavBar from "./components/globalComponent/NavAndFooter/MainnavBar";
-import Dashborad from "./pages/dashboard";
+import Home from "./pages/home";
 import Blog from "./pages/blog";
 import Contact from "./pages/contact";
 import CustomerCare from "./pages/customerCare";
-import MainFotter from "./components/globalComponent/NavAndFooter/mainFotter";
 import SuccsesStories from "./pages/succsesStories";
 import Reviews from "./pages/reviews";
 import HowToWorkWithMailsale from "./pages/howToWorkWithMailsale";
@@ -18,7 +16,6 @@ import ProfileDashboard from "./pages/profileDashboard";
 import Signup from "./pages/signup";
 import Login from "./pages/login";
 import Search from "./pages/search";
-import UserDashboardNav from "./components/globalComponent/NavAndFooter/userDashboardNav";
 import MyAccount from "./pages/accountPages/myAccount";
 import AdminLogin from "./pages/adminDashboardPages/adminLogin";
 import ErrorPage from "./pages/errorPage";
@@ -28,297 +25,77 @@ import SalesAnalytics from "./pages/adminDashboardPages/salesAnalytics";
 import UserAnalytics from "./pages/adminDashboardPages/userAnalytics";
 import LeadsAnalytics from "./pages/adminDashboardPages/leadsAnalytics";
 import Profile from "./pages/adminDashboardPages/profile";
+import Dashboard from "./pages/dashboard";
+import UserDashboard from "./pages/accountPages/userDashboard";
+import Password  from "./pages/adminDashboardPages/password";
+import UserDetails from "./pages/adminDashboardPages/userDetails";
+import ImportLead from "./pages/adminDashboardPages/ImportLead";
+import LeadsDetails from "./pages/adminDashboardPages/leadsDetails";
+import Settings from "./pages/adminDashboardPages/settings";
+import AppSettings from "./pages/adminDashboardPages/appSettings";
+import Extension from "./pages/adminDashboardPages/extension";
+import SeoSettings from "./pages/adminDashboardPages/seoSettings";
+import SiteSettings from "./pages/adminDashboardPages/siteSettings";
+import UserMannagement from "./pages/adminDashboardPages/userMannagement";
 function App() {
-  const [mainNabShow, setMainNavShow] = useState(true);
-  const [userDashboardNavShow, setuserDashboardNavShow] = useState(true);
-  const [mainFooterShow, setmainFooterShow] = useState(true);
   return (
     <Router>
-      {mainNabShow && <MainnavBar />}
-      {userDashboardNavShow && <UserDashboardNav />}
-
       <Routes>
-        <Route
-          exact
-          path="/"
-          element={
-            <Dashborad
-              funcNav={setMainNavShow}
-              funcUsrDashboardNav={setuserDashboardNavShow}
-              funcmainFooter={setmainFooterShow}
-            />
-          }
-        />
-        <Route
-          exact
-          path="/blog"
-          element={
-            <Blog
-              funcNav={setMainNavShow}
-              funcUsrDashboardNav={setuserDashboardNavShow}
-              funcmainFooter={setmainFooterShow}
-            />
-          }
-        />
-        <Route
-          exact
-          path="/contact"
-          element={
-            <Contact
-              funcNav={setMainNavShow}
-              funcUsrDashboardNav={setuserDashboardNavShow}
-              funcmainFooter={setmainFooterShow}
-            />
-          }
-        />
-        <Route
-          exact
-          path="/customercare"
-          element={
-            <CustomerCare
-              funcNav={setMainNavShow}
-              funcUsrDashboardNav={setuserDashboardNavShow}
-              funcmainFooter={setmainFooterShow}
-            />
-          }
-        />
-        <Route
-          exact
-          path="/succsesstories"
-          element={
-            <SuccsesStories
-              funcNav={setMainNavShow}
-              funcUsrDashboardNav={setuserDashboardNavShow}
-              funcmainFooter={setmainFooterShow}
-            />
-          }
-        />
-        <Route
-          exact
-          path="/reviews"
-          element={
-            <Reviews
-              funcNav={setMainNavShow}
-              funcUsrDashboardNav={setuserDashboardNavShow}
-              funcmainFooter={setmainFooterShow}
-            />
-          }
-        />
-        <Route
-          exact
-          path="/howtoworkwithmailsale"
-          element={
-            <HowToWorkWithMailsale
-              funcNav={setMainNavShow}
-              funcUsrDashboardNav={setuserDashboardNavShow}
-              funcmainFooter={setmainFooterShow}
-            />
-          }
-        />
-        <Route
-          exact
-          path="/pricing"
-          element={
-            <Pricing
-              funcNav={setMainNavShow}
-              funcUsrDashboardNav={setuserDashboardNavShow}
-              funcmainFooter={setmainFooterShow}
-            />
-          }
-        />
-        <Route
-          exact
-          path="/salescrm"
-          element={
-            <SalesCrm
-              funcNav={setMainNavShow}
-              funcUsrDashboardNav={setuserDashboardNavShow}
-              funcmainFooter={setmainFooterShow}
-            />
-          }
-        />
-        <Route
-          exact
-          path="/emailapi"
-          element={
-            <EmailApi
-              funcNav={setMainNavShow}
-              funcUsrDashboardNav={setuserDashboardNavShow}
-              funcmainFooter={setmainFooterShow}
-            />
-          }
-        />
-        <Route
-          exact
-          path="/emailmarketing"
-          element={
-            <EmailMarketing
-              funcNav={setMainNavShow}
-              funcUsrDashboardNav={setuserDashboardNavShow}
-              funcmainFooter={setmainFooterShow}
-            />
-          }
-        />
-        <Route
-          exact
-          path="/emailfinder"
-          element={
-            <EmailFinder
-              funcNav={setMainNavShow}
-              funcUsrDashboardNav={setuserDashboardNavShow}
-              funcmainFooter={setmainFooterShow}
-            />
-          }
-        />
-        <Route
-          exact
-          path="/profiledashboard"
-          element={
-            <ProfileDashboard
-              funcNav={setMainNavShow}
-              funcUsrDashboardNav={setuserDashboardNavShow}
-              funcmainFooter={setmainFooterShow}
-            />
-          }
-        />
-        <Route
-          exact
-          path="/signup"
-          element={
-            <Signup
-              funcNav={setMainNavShow}
-              funcUsrDashboardNav={setuserDashboardNavShow}
-              funcmainFooter={setmainFooterShow}
-            />
-          }
-        />
-        <Route
-          exact
-          path="/login"
-          element={
-            <Login
-              funcNav={setMainNavShow}
-              funcUsrDashboardNav={setuserDashboardNavShow}
-              funcmainFooter={setmainFooterShow}
-            />
-          }
-        />
-        <Route
-          exact
-          path="/search"
-          element={
-            <Search
-              funcNav={setMainNavShow}
-              funcUsrDashboardNav={setuserDashboardNavShow}
-              funcmainFooter={setmainFooterShow}
-            />
-          }
-        />
-        <Route
-          exact
-          path="/myaccount"
-          element={
-            <MyAccount
-              funcNav={setMainNavShow}
-              funcUsrDashboardNav={setuserDashboardNavShow}
-              funcmainFooter={setmainFooterShow}
-            />
-          }
-        />
+        <Route exact path="/" element={<Home />}>
+          <Route exact path="/" element={<Dashboard />} />
+          <Route exact path="/blog" element={<Blog />} />
+          <Route exact path="/contact" element={<Contact />} />
+          <Route exact path="/customercare" element={<CustomerCare />} />
+          <Route exact path="/succsesstories" element={<SuccsesStories />} />
+          <Route exact path="/reviews" element={<Reviews />} />
+          <Route
+            exact
+            path="/howtoworkwithmailsale"
+            element={<HowToWorkWithMailsale />}
+          />
+          <Route exact path="/pricing" element={<Pricing />} />
+          <Route exact path="/salescrm" element={<SalesCrm />} />
+          <Route exact path="/emailapi" element={<EmailApi />} />
+          <Route exact path="/emailmarketing" element={<EmailMarketing />} />
+          <Route exact path="/emailfinder" element={<EmailFinder />} />
+          <Route exact path="/search" element={<Search />} />
+        </Route>
+        {/* login and signup routes */}
+        <Route exact path="/signup" element={<Signup />} />
+        <Route exact path="/login" element={<Login />} />
+        {/* User dashboard routes  */}
+        <Route exact path="user" element={<UserDashboard />}>
+          <Route
+            exact
+            path="profiledashboard"
+            element={<ProfileDashboard />}
+          />
+          <Route exact path="myaccount" element={<MyAccount />} />
+        </Route>
         {/* admin dashboard routes  */}
+        <Route exact path="/admin/login" element={<AdminLogin />} />
+        <Route exact path="admin" element={<AdminDashboardContextwrapper />}>
+          <Route exact path="dashboard" element={<AdminDashboard />} />
+          <Route exact path="salesanalytics" element={<SalesAnalytics />} />
+          <Route exact path="useranalytics" element={<UserAnalytics />} />
+          <Route exact path="leadanalytics" element={<LeadsAnalytics />} />
+          <Route exact path="profile" element={<Profile />} />
+          <Route exact path="password" element={<Password />} />
+          <Route exact path="userdetails" element={<UserDetails />} />
+          <Route exact path="importleads" element={<ImportLead />} />
+          <Route exact path="leadsDetails" element={<LeadsDetails/>} />
+          <Route exact path="settings" element={<Settings/>} />
+          <Route exact path="appsettings" element={<AppSettings/>} />
+          <Route exact path="extension" element={<Extension/>} />
+          <Route exact path="seosettings" element={<SeoSettings/>} />
+          <Route exact path="sitesettings" element={<SiteSettings/>} />
+          <Route exact path="usermannagement" element={<UserMannagement/>} />
 
-        <Route>
-          <Route
-            exact
-            path="/admin/login"
-            element={
-              <AdminLogin
-                funcNav={setMainNavShow}
-                funcUsrDashboardNav={setuserDashboardNavShow}
-                funcmainFooter={setmainFooterShow}
-              />
-            }
-          />
-          <Route
-            exact
-            path="/admin/dashboard"
-            element={
-              <AdminDashboardContextwrapper>
-                <AdminDashboard
-                  funcNav={setMainNavShow}
-                  funcUsrDashboardNav={setuserDashboardNavShow}
-                  funcmainFooter={setmainFooterShow}
-                />
-              </AdminDashboardContextwrapper>
-            }
-          />
-          <Route
-            exact
-            path="/admin/salesanalytics"
-            element={
-              <AdminDashboardContextwrapper>
-                <SalesAnalytics
-                  funcNav={setMainNavShow}
-                  funcUsrDashboardNav={setuserDashboardNavShow}
-                  funcmainFooter={setmainFooterShow}
-                />
-              </AdminDashboardContextwrapper>
-            }
-          />
-           <Route
-            exact
-            path="/admin/useranalytics"
-            element={
-              <AdminDashboardContextwrapper>
-                <UserAnalytics
-                  funcNav={setMainNavShow}
-                  funcUsrDashboardNav={setuserDashboardNavShow}
-                  funcmainFooter={setmainFooterShow}
-                />
-              </AdminDashboardContextwrapper>
-            }
-          />
-           <Route
-            exact
-            path="/admin/leadanalytics"
-            element={
-              <AdminDashboardContextwrapper>
-                <LeadsAnalytics
-                  funcNav={setMainNavShow}
-                  funcUsrDashboardNav={setuserDashboardNavShow}
-                  funcmainFooter={setmainFooterShow}
-                />
-              </AdminDashboardContextwrapper>
-            }
-          />
-           <Route
-            exact
-            path="/admin/profile"
-            element={
-              <AdminDashboardContextwrapper>
-                <Profile
-                  funcNav={setMainNavShow}
-                  funcUsrDashboardNav={setuserDashboardNavShow}
-                  funcmainFooter={setmainFooterShow}
-                />
-              </AdminDashboardContextwrapper>
-            }
-          />
         </Route>
 
         {/* error page  */}
-        <Route
-          path="*"
-          element={
-            <ErrorPage
-              funcNav={setMainNavShow}
-              funcUsrDashboardNav={setuserDashboardNavShow}
-              funcmainFooter={setmainFooterShow}
-            />
-          }
-        />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
-      {mainFooterShow && <MainFotter />}
     </Router>
   );
 }

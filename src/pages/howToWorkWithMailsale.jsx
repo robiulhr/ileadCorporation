@@ -6,11 +6,7 @@ import BlogContent from "../content/blog";
 import Pagination from "../components/globalComponent/pagination";
 import HeadingParagraphBtn from "../components/globalComponent/InputtextAndBtn/headingParagraphBtn";
 
-const HowToWorkWithMailsale = (props) => {
-  const { funcNav ,funcUsrDashboardNav,funcmainFooter} = props;
-  funcNav(true);
-  funcUsrDashboardNav(false)
-  funcmainFooter(true)
+const HowToWorkWithMailsale = () => {
   return (
     <div className="howtoworkwithmailsale">
       <Carousel

@@ -8,79 +8,131 @@ import MarkEmailReadOutlinedIcon from "@mui/icons-material/MarkEmailReadOutlined
 import SaleAnalytics from "../../../assets/img/icon/saleAnalytics.png";
 import Useranalytics from "../../../assets/img/icon/useranalytics.png";
 import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
-import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
-import AppShortcutRoundedIcon from '@mui/icons-material/AppShortcutRounded';
-import DisplaySettingsRoundedIcon from '@mui/icons-material/DisplaySettingsRounded';
-import ExtensionRoundedIcon from '@mui/icons-material/ExtensionRounded';
-import CleaningServicesRoundedIcon from '@mui/icons-material/CleaningServicesRounded';
+import SettingsRoundedIcon from "@mui/icons-material/SettingsRounded";
+import AppShortcutRoundedIcon from "@mui/icons-material/AppShortcutRounded";
+import DisplaySettingsRoundedIcon from "@mui/icons-material/DisplaySettingsRounded";
+import ExtensionRoundedIcon from "@mui/icons-material/ExtensionRounded";
+import CleaningServicesRoundedIcon from "@mui/icons-material/CleaningServicesRounded";
 import seoIcon from "../../../assets/img/icon/seoIcon.png";
 import { AdminContext } from "../../../context/appContext";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 const AdminDashboardSidebar = () => {
   const { adminSidebarShow } = useContext(AdminContext);
 
   return (
     <div
       className={` bg-normal-dark-blue-300 h-max transition-all ${
-        adminSidebarShow
-          ? "w-0 translate-x-[-250px]"
-          : "w-[250px]"
+        adminSidebarShow ? "w-0 translate-x-[-250px]" : "w-[250px]"
       } mb-28`}
     >
       <ul className="admin-sidebar-menu">
         <li className="!mb-4 !mt-7">
-          <Link
+          <NavLink
             to="/admin/dashboard"
-            className="flex-row-center justify-start ml-5 w-full"
+            style={({ isActive }) => {
+              return {
+                color: isActive ? "rgb(59 130 246 / 0.5)" : "inherit",
+              };
+            }}
+            className={({ isActive }) => {
+              return `flex-row-center justify-start ml-5 w-full ${
+                isActive ? "active" : ""
+              }`;
+            }}
           >
             <HomeIcon sx={{ margin: "0px 10px" }} /> Dashboard
-          </Link>
+          </NavLink>
         </li>
         <div className="my-4">
           <p className="mx-8 text-white mb-3 text-[1.1rem] font-bold">
             User Management
           </p>
           <li>
-            <Link
+            <NavLink
               to="/admin/dashboard"
-              className="flex-row-center justify-start ml-5 w-full"
+              style={({ isActive }) => {
+                return {
+                  color: isActive ? "rgb(59 130 246 / 0.5)" : "inherit",
+                };
+              }}
+              className={({ isActive }) => {
+                return `flex-row-center justify-start ml-5 w-full ${
+                  isActive ? "active" : ""
+                }`;
+              }}
             >
               <GroupIcon sx={{ margin: "0px 10px" }} /> All Users
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="/admin/dashboard"
-              className="flex-row-center justify-start ml-5 w-full"
+              style={({ isActive }) => {
+                return {
+                  color: isActive ? "rgb(59 130 246 / 0.5)" : "inherit",
+                };
+              }}
+              className={({ isActive }) => {
+                return `flex-row-center justify-start ml-5 w-full ${
+                  isActive ? "active" : ""
+                }`;
+              }}
             >
               <img src={PersonCheck} alt="" className="mx-[10px]" /> Active
               Users
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="/admin/dashboard"
-              className="flex-row-center justify-start ml-5 w-full"
+              style={({ isActive }) => {
+                return {
+                  color: isActive ? "rgb(59 130 246 / 0.5)" : "inherit",
+                };
+              }}
+              className={({ isActive }) => {
+                return `flex-row-center justify-start ml-5 w-full ${
+                  isActive ? "active" : ""
+                }`;
+              }}
             >
               <PersonRemoveIcon sx={{ margin: "0px 10px" }} /> Deactivate User
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="/admin/dashboard"
-              className="flex-row-center justify-start ml-5 w-full"
+              style={({ isActive }) => {
+                return {
+                  color: isActive ? "rgb(59 130 246 / 0.5)" : "inherit",
+                };
+              }}
+              className={({ isActive }) => {
+                return `flex-row-center justify-start ml-5 w-full ${
+                  isActive ? "active" : ""
+                }`;
+              }}
             >
               <PersonOffOutlinedIcon sx={{ margin: "0px 10px" }} /> Banned Users
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
-              to="/admin/dashboard"
-              className="flex-row-center justify-start ml-5 w-full"
+            <NavLink
+              to="/admin/usermannagement"
+              style={({ isActive }) => {
+                return {
+                  color: isActive ? "rgb(59 130 246 / 0.5)" : "inherit",
+                };
+              }}
+              className={({ isActive }) => {
+                return `flex-row-center justify-start ml-5 w-full ${
+                  isActive ? "active" : ""
+                }`;
+              }}
             >
               <MarkEmailReadOutlinedIcon sx={{ margin: "0px 10px" }} /> Email to
               Users
-            </Link>
+            </NavLink>
           </li>
         </div>
         <div className="my-4">
@@ -88,38 +140,74 @@ const AdminDashboardSidebar = () => {
             Lead Management
           </p>
           <li>
-            <Link
+            <NavLink
               to="/admin/dashboard"
-              className="flex-row-center justify-start ml-5 w-full"
+              style={({ isActive }) => {
+                return {
+                  color: isActive ? "rgb(59 130 246 / 0.5)" : "inherit",
+                };
+              }}
+              className={({ isActive }) => {
+                return `flex-row-center justify-start ml-5 w-full ${
+                  isActive ? "active" : ""
+                }`;
+              }}
             >
               <GroupIcon sx={{ margin: "0px 10px" }} /> All Leads
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="/admin/dashboard"
-              className="flex-row-center justify-start ml-5 w-full"
+              style={({ isActive }) => {
+                return {
+                  color: isActive ? "rgb(59 130 246 / 0.5)" : "inherit",
+                };
+              }}
+              className={({ isActive }) => {
+                return `flex-row-center justify-start ml-5 w-full ${
+                  isActive ? "active" : ""
+                }`;
+              }}
             >
               <img src={PersonCheck} alt="" className="mx-[10px]" /> Active
               Leads
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="/admin/dashboard"
-              className="flex-row-center justify-start ml-5 w-full"
+              style={({ isActive }) => {
+                return {
+                  color: isActive ? "rgb(59 130 246 / 0.5)" : "inherit",
+                };
+              }}
+              className={({ isActive }) => {
+                return `flex-row-center justify-start ml-5 w-full ${
+                  isActive ? "active" : ""
+                }`;
+              }}
             >
               <PersonRemoveIcon sx={{ margin: "0px 10px" }} /> Deactivate Leads
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="/admin/dashboard"
-              className="flex-row-center justify-start ml-5 w-full"
+              style={({ isActive }) => {
+                return {
+                  color: isActive ? "rgb(59 130 246 / 0.5)" : "inherit",
+                };
+              }}
+              className={({ isActive }) => {
+                return `flex-row-center justify-start ml-5 w-full ${
+                  isActive ? "active" : ""
+                }`;
+              }}
             >
               <PersonOffOutlinedIcon sx={{ margin: "0px 10px" }} /> Removed
               Leads
-            </Link>
+            </NavLink>
           </li>
         </div>
         <div className="my-4">
@@ -127,31 +215,58 @@ const AdminDashboardSidebar = () => {
             Analytics
           </p>
           <li>
-            <Link
+            <NavLink
               to="/admin/salesanalytics"
-              className="flex-row-center justify-start ml-5 w-full"
+              style={({ isActive }) => {
+                return {
+                  color: isActive ? "rgb(59 130 246 / 0.5)" : "inherit",
+                };
+              }}
+              className={({ isActive }) => {
+                return `flex-row-center justify-start ml-5 w-full ${
+                  isActive ? "active" : ""
+                }`;
+              }}
             >
               <img src={SaleAnalytics} alt="" className="mx-[10px]" /> Sales
               Analytics
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="/admin/useranalytics"
-              className="flex-row-center justify-start ml-5 w-full"
+              style={({ isActive }) => {
+                return {
+                  color: isActive ? "rgb(59 130 246 / 0.5)" : "inherit",
+                };
+              }}
+              className={({ isActive }) => {
+                return `flex-row-center justify-start ml-5 w-full ${
+                  isActive ? "active" : ""
+                }`;
+              }}
             >
               <img src={Useranalytics} alt="" className="mx-[10px]" /> User
               Analytics
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="/admin/leadanalytics"
-              className="flex-row-center justify-start ml-5 w-full"
+              style={({ isActive }) => {
+                return {
+                  color: isActive ? "rgb(59 130 246 / 0.5)" : "inherit",
+                };
+              }}
+              className={({ isActive }) => {
+                return `flex-row-center justify-start ml-5 w-full ${
+                  isActive ? "active" : ""
+                }`;
+              }}
             >
               <BarChartOutlinedIcon sx={{ margin: "0px 10px" }} /> Lead
               Analytics
-            </Link>
+            </NavLink>
           </li>
         </div>
         <div className="my-4">
@@ -159,61 +274,113 @@ const AdminDashboardSidebar = () => {
             Settings
           </p>
           <li>
-            <Link
-              to="/admin/dashboard"
-              className="flex-row-center justify-start ml-5 w-full"
+            <NavLink
+              to="/admin/settings"
+              style={({ isActive }) => {
+                return {
+                  color: isActive ? "rgb(59 130 246 / 0.5)" : "inherit",
+                };
+              }}
+              className={({ isActive }) => {
+                return `flex-row-center justify-start ml-5 w-full ${
+                  isActive ? "active" : ""
+                }`;
+              }}
             >
-              <SettingsRoundedIcon sx={{margin:"0px 10px"}}/> General
+              <SettingsRoundedIcon sx={{ margin: "0px 10px" }} /> General
               Settings
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
-              to="/admin/dashboard"
-              className="flex-row-center justify-start ml-5 w-full"
+            <NavLink
+              to="/admin/sitesettings"
+              style={({ isActive }) => {
+                return {
+                  color: isActive ? "rgb(59 130 246 / 0.5)" : "inherit",
+                };
+              }}
+              className={({ isActive }) => {
+                return `flex-row-center justify-start ml-5 w-full ${
+                  isActive ? "active" : ""
+                }`;
+              }}
             >
-              <DisplaySettingsRoundedIcon sx={{margin:"0px 10px"}} /> Site
+              <DisplaySettingsRoundedIcon sx={{ margin: "0px 10px" }} /> Site
               Settings
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
-              to="/admin/dashboard"
-              className="flex-row-center justify-start ml-5 w-full"
+            <NavLink
+              to="/admin/seosettings"
+              style={({ isActive }) => {
+                return {
+                  color: isActive ? "rgb(59 130 246 / 0.5)" : "inherit",
+                };
+              }}
+              className={({ isActive }) => {
+                return `flex-row-center justify-start ml-5 w-full ${
+                  isActive ? "active" : ""
+                }`;
+              }}
             >
               <img src={seoIcon} alt="" className="mx-[10px]" /> SEO
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
-              to="/admin/dashboard"
-              className="flex-row-center justify-start ml-5 w-full"
+            <NavLink
+              to="/admin/appsettings"
+              style={({ isActive }) => {
+                return {
+                  color: isActive ? "rgb(59 130 246 / 0.5)" : "inherit",
+                };
+              }}
+              className={({ isActive }) => {
+                return `flex-row-center justify-start ml-5 w-full ${
+                  isActive ? "active" : ""
+                }`;
+              }}
             >
               <AppShortcutRoundedIcon sx={{ margin: "0px 10px" }} /> App Section
-            </Link>
+            </NavLink>
           </li>
         </div>
         <div className="my-4">
-          <p className="mx-8 text-white mb-3 text-[1.1rem] font-bold">
-            Extra
-          </p>
+          <p className="mx-8 text-white mb-3 text-[1.1rem] font-bold">Extra</p>
           <li>
-            <Link
-              to="/admin/dashboard"
-              className="flex-row-center justify-start ml-5 w-full"
+            <NavLink
+              to="/admin/extension"
+              style={({ isActive }) => {
+                return {
+                  color: isActive ? "rgb(59 130 246 / 0.5)" : "inherit",
+                };
+              }}
+              className={({ isActive }) => {
+                return `flex-row-center justify-start ml-5 w-full ${
+                  isActive ? "active" : ""
+                }`;
+              }}
             >
-              <ExtensionRoundedIcon sx={{margin:"0px 10px"}}/> Extensions
-            </Link>
+              <ExtensionRoundedIcon sx={{ margin: "0px 10px" }} /> Extensions
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="/admin/dashboard"
-              className="flex-row-center justify-start ml-5 w-full"
+              style={({ isActive }) => {
+                return {
+                  color: isActive ? "rgb(59 130 246 / 0.5)" : "inherit",
+                };
+              }}
+              className={({ isActive }) => {
+                return `flex-row-center justify-start ml-5 w-full ${
+                  isActive ? "active" : ""
+                }`;
+              }}
             >
-              <CleaningServicesRoundedIcon sx={{margin:"0px 10px"}} /> Clear Cache
-            </Link>
+              <CleaningServicesRoundedIcon sx={{ margin: "0px 10px" }} /> Clear
+              Cache
+            </NavLink>
           </li>
-          
         </div>
       </ul>
     </div>

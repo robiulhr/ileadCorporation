@@ -9,11 +9,7 @@ import SingleDivComp from "../components/globalComponent/singleDivComp";
 import HeadingAndSignupBtn from "../components/globalComponent/InputtextAndBtn/headingAndSignupBtn";
 import FrequentlyAskedQustion from "../components/globalComponent/frequentlyAskedQustion";
 import FrequentlyAskedQuestionsContent from "../content/frequentlyAskedQuestionsContent";
-const EmailMarketing = (props) => {
-  const { funcNav ,funcUsrDashboardNav,funcmainFooter} = props;
-  funcNav(true);
-  funcUsrDashboardNav(false)
-  funcmainFooter(true)
+const EmailMarketing = () => {
   return (
     <>
       <div className="container">

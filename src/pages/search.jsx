@@ -4,11 +4,7 @@ import PaginationDiv from "../components/globalComponent/pagination";
 import SearchResultSection from "../components/pageComponent/Home/search/searchResultSection";
 import SearchSingleItem from "../components/pageComponent/Home/search/searchSingleItem";
 import CustomSelectInput from "../components/globalComponent/InputtextAndBtn/customSelectInput";
-const Search = (props) => {
-  const { funcNav,funcUsrDashboardNav,funcmainFooter } = props;
-  funcNav(false);
-  funcUsrDashboardNav(true)
-  funcmainFooter(true)
+const Search = () => {
   return (
     <>
       <div className="container">

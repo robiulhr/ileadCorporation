@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+import { Outlet } from 'react-router-dom';
 import { AdminContext } from '../../../context/appContext';
 
 const AdminDashboardContextwrapper = ({children}) => {
@@ -6,7 +7,7 @@ const AdminDashboardContextwrapper = ({children}) => {
     return (
         <>
             <AdminContext.Provider value={{adminSidebarShow,setAdminSidebarShow }}>
-                    {children}
+                    <Outlet/>
             </AdminContext.Provider>
         </>
     );

@@ -93,18 +93,21 @@ export default function AccountProfileMenu() {
             <Avatar /> Profile
           </MenuItem>
         </Link>
-        <MenuItem
-          sx={{
-            color: "rgba(255, 255, 255, 0.7)",
-            padding: "10px 15px",
-            minWidth: "160px",
-          }}
-        >
-          <ListItemIcon sx={{ color: "rgba(255, 255, 255, 0.7)" }}>
-            <Settings fontSize="small" />
-          </ListItemIcon>
-          Settings
-        </MenuItem>
+        <Link to={"/admin/password"}>
+          <MenuItem
+            sx={{
+              color: "rgba(255, 255, 255, 0.7)",
+              padding: "10px 15px",
+              minWidth: "160px",
+            }}
+          >
+            <ListItemIcon sx={{ color: "rgba(255, 255, 255, 0.7)" }}>
+              <Settings fontSize="small" />
+            </ListItemIcon>
+            Password
+          </MenuItem>
+        </Link>
+
         <MenuItem
           sx={{
             color: "rgba(255, 255, 255, 0.7)",

@@ -15,11 +15,7 @@ import ReviewsPageSliderContentRight from "../components/pageComponent/Home/revi
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import Inputfeild from "../components/globalComponent/InputtextAndBtn/inputfeild";
 import SearchIcon from "@mui/icons-material/Search";
-const SuccsesStories = (props) => {
-  const { funcNav,funcUsrDashboardNav,funcmainFooter } = props;
-  funcNav(true);
-  funcUsrDashboardNav(false)
-  funcmainFooter(true)
+const SuccsesStories = () => {
   return (
     <div className="SuccsesStories">
       <div className="container pt-20">

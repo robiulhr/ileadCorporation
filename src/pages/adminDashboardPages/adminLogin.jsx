@@ -2,11 +2,7 @@ import React from 'react';
 import Inputfeild from '../../components/globalComponent/InputtextAndBtn/inputfeild';
 import PasswordInput from '../../components/globalComponent/InputtextAndBtn/passwordInput';
 import AdminPagesWrapper from '../../components/pageComponent/adminPages/adminPagesWrapper';
-const AdminLogin = (props) => {
-    const {funcNav,funcUsrDashboardNav,funcmainFooter} = props
-    funcNav(false)
-    funcUsrDashboardNav(false)
-    funcmainFooter(false)
+const AdminLogin = () => {
     return (
         <AdminPagesWrapper>
                   <div className='bg-primary-blue-400 py-20 px-28 admin-login rounded-lg'>

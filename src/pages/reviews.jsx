@@ -11,11 +11,7 @@ import ClientReviews from "../components/pageComponent/clientReviews";
 import ReviewsPageSliderContentLeft from "../components/pageComponent/Home/reviews/reviewsPageSliderContentLeft";
 import ReviewsPageSliderContentRight from "../components/pageComponent/Home/reviews/reviewsPageSliderContentRight";
 
-const Reviews = (props) => {
-  const { funcNav ,funcUsrDashboardNav,funcmainFooter} = props;
-  funcNav(true);
-  funcUsrDashboardNav(false)
-  funcmainFooter(true)
+const Reviews = () => {
   return (
     <div>
       <div className="container reviews">

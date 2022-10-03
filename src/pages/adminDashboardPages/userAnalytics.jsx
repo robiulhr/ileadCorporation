@@ -6,18 +6,14 @@ import AdminTitle from "../../components/pageComponent/adminPages/adminTitle";
 import FourDivRow from "../../components/pageComponent/adminPages/fourDivRow";
 import SimpleBarChart from "../../components/pageComponent/adminPages/SimpleBarChart";
 import CustomActiveShapePieChart from "../../components/pageComponent/adminPages/customActiveShapePieChart";
-import SelectMui from "../../components/globalComponent/InputtextAndBtn/selectMui";
+import SelectMui from "../../components/globalComponent/muiComponent/selectMui";
 import PaieChartLatestHistory from "../../components/pageComponent/adminPages/paieChartLatestHistory";
 import AdminDashboardMainContentWrapper from "../../components/pageComponent/adminPages/adminDashboardMainContentWrapper";
 import {
   SalesAnaliticsPageSalesAnaliticsData,
   adminDashboardPieChartdata,
 } from "../../content/adminDashboardData";
-const UserAnalytics = (props) => {
-  const { funcNav, funcUsrDashboardNav, funcmainFooter } = props;
-  funcNav(false);
-  funcUsrDashboardNav(false);
-  funcmainFooter(false);
+const UserAnalytics = () => {
 
   return (
     <AdminPagesWrapper>

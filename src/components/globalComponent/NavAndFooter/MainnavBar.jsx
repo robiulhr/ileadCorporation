@@ -38,7 +38,7 @@ const MainnavBar = () => {
                   <Link to="/emailapi">Email Api</Link>
                 </li>
                 <li>
-                  <Link to="/profiledashboard">Profile Dashboard</Link>
+                  <Link to="/user/profiledashboard">Profile Dashboard</Link>
                 </li>
                 <li>
                   <Link to="/admin/dashboard">Admin Dashboard</Link>

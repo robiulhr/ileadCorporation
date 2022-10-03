@@ -15,11 +15,7 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import Inputfeild from "../components/globalComponent/InputtextAndBtn/inputfeild";
 
 
-const Blog = (props) => {
-  const { funcNav, funcUsrDashboardNav, funcmainFooter } = props;
-  funcNav(true);
-  funcUsrDashboardNav(false);
-  funcmainFooter(true);
+const Blog = () => {
 
   return (
     <div>
